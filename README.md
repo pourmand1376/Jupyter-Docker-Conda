@@ -1,5 +1,6 @@
 # Jupyter-Docker-Conda
 
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/amirpourmand/jupyter-docker-conda/latest)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/pourmand1376/Jupyter-Docker-Conda/deploy-image.yaml)
 
