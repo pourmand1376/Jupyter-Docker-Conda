@@ -1,5 +1,7 @@
 # Jupyter-Docker-Conda
 
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/amirpourmand/jupyter-docker-conda/latest)
+
 A Jupyter Environment which is run on docker and you can easily change kernels via conda
 
 To run it:
