@@ -25,10 +25,16 @@ This command will map your current working directory into the Docker container. 
 2. To create and switch to a new Python environment, open a terminal and execute the following commands:
 
 ```
-conda create -n my_env python=3.11
-conda activate my_env
-conda install ipykernel
+conda create -n my_env ipykernel -y
 ```
+
+or
+
+```
+conda create -n my_env ipykernel python=3.8 -y
+```
+
+After installation, wait for at most 30 seconds so that your new kernel is added to your jupyter.
 
 Now, you can seamlessly switch between Python environments within your Jupyter notebook.
 
