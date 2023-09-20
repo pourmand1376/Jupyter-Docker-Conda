@@ -11,7 +11,6 @@ docker run -d \
   -p 10000:8888 \
   -v "$(pwd)":/home/app \
   --name my_jupyter_container \
-  --restart unless-stopped \
   jupyter-conda:latest
 ```
 

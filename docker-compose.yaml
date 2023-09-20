@@ -8,5 +8,3 @@ services:
       - 10000:8888
     volumes:
       - .:/home/app
-
-    restart: "unless-stopped"
