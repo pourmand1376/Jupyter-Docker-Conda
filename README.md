@@ -22,6 +22,7 @@ Open up terminal.
 
 ```
 conda create -n my_env python=3.11
+conda activate my_env
 ```
 
 Then:
@@ -29,3 +30,15 @@ Then:
 ```
 python -m ipykernel install --user --name my_env
 ```
+
+## Features
+
+Change python version easily
+
+Isolate environments easily
+
+Based on debian. Install everything you need with apt
+
+Password for Jupyter notebook is `docker`.
+
+Root access in container.

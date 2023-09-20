@@ -11,14 +11,18 @@ RUN wget \
     https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && mkdir /root/.conda \
     && bash Miniconda3-latest-Linux-x86_64.sh -b \
-    && rm -f Miniconda3-latest-Linux-x86_64.sh 
+    && rm -f Miniconda3-latest-Linux-x86_64.sh
 
 RUN conda install nb_conda nb_conda_kernels
 
 RUN conda install -c conda-forge jupyterlab
 
 ENV JUPYTER_PORT=8888 \
-    TOKEN=docker 
+    TOKEN=docker \
+    SHELL=/bin/bash \
+    PATH="/root/miniconda3/bin:${PATH}"
+
+RUN conda init bash
 
 EXPOSE $JUPYTER_PORT
 
