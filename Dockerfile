@@ -22,7 +22,7 @@ ENV JUPYTER_PORT=8888 \
 
 EXPOSE $JUPYTER_PORT
 
-WORKDIR /app
+WORKDIR /home/app
 
 COPY entry_point.sh /entry/entry_point.sh
 

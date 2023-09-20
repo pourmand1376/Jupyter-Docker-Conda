@@ -5,6 +5,8 @@ services:
     build: .
     image: jupyter-conda:latest
     ports:
-      - 8888:8888
+      - 10000:8888
+    volumes:
+      - .:/home/app
 
     restart: "unless-stopped"
