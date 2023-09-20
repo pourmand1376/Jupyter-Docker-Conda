@@ -1,6 +1,10 @@
 # Jupyter-Docker-Conda
 
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/amirpourmand/jupyter-docker-conda/latest)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/pourmand1376/Jupyter-Docker-Conda/deploy-image.yaml)
+
+
+
 
 ## Overview
 
