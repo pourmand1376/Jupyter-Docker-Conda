@@ -2,9 +2,15 @@
 
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/amirpourmand/jupyter-docker-conda/latest)
 
-A Jupyter Environment which is run on docker and you can easily change kernels via conda
+## Overview
 
-To run it:
+Jupyter-Docker-Conda is a versatile Jupyter environment designed to run within a Docker container, offering seamless kernel switching via Conda. This setup provides you with the flexibility to create isolated Python environments and change Python versions effortlessly. It is based on Debian, enabling easy installation of additional dependencies using apt. The default password for the Jupyter notebook is set to docker, and you have root access within the container.
+
+## Getting Started
+
+1. To run Jupyter-Docker-Conda, follow these simple steps:
+
+Pull the Docker image and start a container:
 
 ```
 docker run -d \
@@ -14,31 +20,29 @@ docker run -d \
   amirpourmand/jupyter-docker-conda
 ```
 
-> Note that this command will map your current directory into docker container. It is recommended to create an empty folder called `jupyter` or something if you want to be more secure.
+This command will map your current working directory into the Docker container. For added security, consider creating an empty folder called jupyter or another suitable name.
 
-To install new python environment and switch to it.
-
-Open up terminal.
+2. To create and switch to a new Python environment, open a terminal and execute the following commands:
 
 ```
 conda create -n my_env python=3.11
 conda activate my_env
 ```
 
-Then:
+3. Install the new environment as a Jupyter kernel:
 
 ```
 python -m ipykernel install --user --name my_env
 ```
 
+Now, you can seamlessly switch between Python environments within your Jupyter notebook.
+
 ## Features
 
-Change python version easily
+- Easy Python version switching
+- Effortless isolation of environments
+- Based on Debian, allowing straightforward installation of additional packages using apt
+- Default Jupyter notebook password: docker
+- Root access within the container
 
-Isolate environments easily
-
-Based on debian. Install everything you need with apt
-
-Password for Jupyter notebook is `docker`.
-
-Root access in container.
+Feel free to explore and utilize Jupyter-Docker-Conda for your data science and development needs!
