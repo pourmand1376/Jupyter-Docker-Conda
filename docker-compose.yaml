@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app:
     build: .
-    image: jupyter-conda:latest
+    image: amirpourmand/jupyter-docker-conda:latest
     ports:
       - 10000:8888
     volumes:
