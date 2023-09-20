@@ -32,6 +32,7 @@ conda activate my_env
 3. Install the new environment as a Jupyter kernel:
 
 ```
+conda install ipykernel
 python -m ipykernel install --user --name my_env
 ```
 
