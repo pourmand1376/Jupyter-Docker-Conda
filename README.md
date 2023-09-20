@@ -28,7 +28,7 @@ Password: `docker`
 
 ## New Environment
 
-To create and switch to a new Python environment, open a terminal and execute the following commands:
+To create and switch to a new Python environment, open a terminal (inside Jupyter Launcher) and execute the following commands:
 
 ```
 conda create -n my_env ipykernel -y
