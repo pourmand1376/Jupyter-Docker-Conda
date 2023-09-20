@@ -4,7 +4,7 @@
 
 ## Overview
 
-Jupyter-Docker-Conda is a versatile Jupyter environment designed to run within a Docker container, offering seamless kernel switching via Conda. This setup provides you with the flexibility to create isolated Python environments and change Python versions effortlessly. It is based on Debian, enabling easy installation of additional dependencies using apt. The default password for the Jupyter notebook is set to docker, and you have root access within the container.
+Jupyter-Docker-Conda is a versatile Jupyter environment designed to run within a Docker container, offering seamless kernel switching via Conda. This setup provides you with the flexibility to create isolated Python environments and change Python versions effortlessly. It is based on Debian, enabling easy installation of additional dependencies using apt.
 
 ## Getting Started
 
@@ -22,7 +22,13 @@ docker run -d \
 
 This command will map your current working directory into the Docker container. For added security, consider creating an empty folder called jupyter or another suitable name.
 
-2. To create and switch to a new Python environment, open a terminal and execute the following commands:
+2. Open up your browser to with port 10000 (http://localhost:10000) to see your jupyter notebook.
+
+Password: `docker`
+
+## New Environment
+
+To create and switch to a new Python environment, open a terminal and execute the following commands:
 
 ```
 conda create -n my_env ipykernel -y
