@@ -57,7 +57,7 @@ If you need sudo permission, there are several ways.
 ```
 docker run -d -u 0 \
   -p 10000:8888 \
-  -v "$(pwd)":/home/app \
+  -v "$(pwd)":/home/user/app \
   --name my_jupyter_container \
   amirpourmand/jupyter-docker-conda
 ```
