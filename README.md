@@ -4,12 +4,11 @@
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/amirpourmand/jupyter-docker-conda/latest)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/pourmand1376/Jupyter-Docker-Conda/deploy-image.yaml)
 
-
-
-
 ## Overview
 
 Jupyter-Docker-Conda is a versatile Jupyter environment designed to run within a Docker container, offering seamless kernel switching via Conda. This setup provides you with the flexibility to create isolated Python environments and change Python versions effortlessly. It is based on Debian, enabling easy installation of additional dependencies using apt.
+
+This is very useful if you are on a shared server and you don't want (or you don't have permission) to mess around with system dependencies.
 
 ## Getting Started
 
@@ -20,7 +19,7 @@ Pull the Docker image and start a container:
 ```
 docker run -d \
   -p 10000:8888 \
-  -v "$(pwd)":/home/app \
+  -v "$(pwd)":/home/user/app \
   --name my_jupyter_container \
   amirpourmand/jupyter-docker-conda
 ```
@@ -48,6 +47,26 @@ conda create -n my_env ipykernel python=3.8 -y
 After installation, wait for at most 30 seconds so that your new kernel is added to your jupyter.
 
 Now, you can seamlessly switch between Python environments within your Jupyter notebook.
+
+## Using Apt install (Sudo Permission)
+
+If you need sudo permission, there are several ways.
+
+1. if you don't care about security considerations, you can use `-u 0` or `--user 0` argument to run the container as root at the beginning.
+
+```
+docker run -d -u 0 \
+  -p 10000:8888 \
+  -v "$(pwd)":/home/app \
+  --name my_jupyter_container \
+  amirpourmand/jupyter-docker-conda
+```
+
+2. If you have a running container, you can also access the root via:
+
+```
+docker exec -it -u 0 my_jupyter_container bash
+```
 
 ## Features
 

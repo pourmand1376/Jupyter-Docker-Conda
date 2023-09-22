@@ -1,15 +1,19 @@
 FROM bitnami/minideb:latest
 
-ENV PATH="/root/miniconda3/bin:${PATH}"
-ARG PATH="/root/miniconda3/bin:${PATH}"
-
 RUN apt-get update && apt-get install -y wget git curl && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /tmp/
+RUN useradd -m -u 1000 user
+USER user
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:${PATH}
+WORKDIR ${HOME}/app
+
+ENV PATH="${HOME}/miniconda3/bin:${PATH}"
+ARG PATH="${HOME}/miniconda3/bin:${PATH}"
 
 RUN wget \
     https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && mkdir /root/.conda \
+    && mkdir ${HOME}/.conda \
     && bash Miniconda3-latest-Linux-x86_64.sh -b \
     && rm -f Miniconda3-latest-Linux-x86_64.sh
 
@@ -20,17 +24,19 @@ RUN conda install -c conda-forge jupyterlab
 ENV JUPYTER_PORT=8888 \
     TOKEN=docker \
     SHELL=/bin/bash \
-    PATH="/root/miniconda3/bin:${PATH}"
-
-RUN conda init bash
+    PATH="${HOME}/miniconda3/bin:${PATH}"
 
 # install oh-my-bash
 RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
+RUN conda init bash
+
+RUN echo "export PATH=$PATH" >> ${HOME}/.bashrc
+
 EXPOSE $JUPYTER_PORT
 
-WORKDIR /home/app
+WORKDIR ${HOME}/app
 
-COPY entry_point.sh /entry/entry_point.sh
+COPY --chown=1000 entry_point.sh /entry/entry_point.sh
 
 CMD ["/entry/entry_point.sh"]

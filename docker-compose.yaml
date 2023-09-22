@@ -5,6 +5,6 @@ services:
     build: .
     image: amirpourmand/jupyter-docker-conda:latest
     ports:
-      - 10005:8888
+      - 10000:8888
     volumes:
-      - .:/home/app
+      - .:/home/user/app
