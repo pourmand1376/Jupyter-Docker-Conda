@@ -74,6 +74,8 @@ docker exec -it -u 0 my_jupyter_container bash
 - Effortless isolation of environments
 - Based on Debian, allowing straightforward installation of additional packages using apt
 - Default Jupyter notebook password: docker
-- Root access within the container
+- Root access within the container (non-default)
+- Build with security in mind
+- Very Simple to work with.
 
 Feel free to explore and utilize Jupyter-Docker-Conda for your data science and development needs!
