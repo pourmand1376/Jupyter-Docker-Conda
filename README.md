@@ -44,9 +44,11 @@ or
 conda create -n my_env ipykernel python=3.8 -y
 ```
 
-After installation, wait for at most 30 seconds so that your new kernel is added to your jupyter.
+After installation, wait for ~30 seconds so that your new kernel is added to your jupyter.
 
 Now, you can seamlessly switch between Python environments within your Jupyter notebook.
+
+> Note: It is important to install ipykernel. Otherwise, you can not choose kernel from the Jupyter notebook.
 
 ## Using Apt install (Sudo Permission)
 
