@@ -1,6 +1,6 @@
 FROM bitnami/minideb:latest
 
-RUN apt-get update && apt-get install -y wget git curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget git curl nano vim htop && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -u 1000 user
 USER user
