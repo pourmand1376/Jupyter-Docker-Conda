@@ -30,7 +30,7 @@ docker run -d \
   -p 10000:8888 \
   -v "$(pwd)":/home/user/app \
   --name my_jupyter_container \
-  --restart unless-stopped \ 
+  --restart unless-stopped \
   amirpourmand/jupyter-docker-conda
 ```
 
