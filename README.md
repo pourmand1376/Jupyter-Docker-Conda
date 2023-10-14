@@ -24,6 +24,16 @@ docker run -d \
   amirpourmand/jupyter-docker-conda
 ```
 
+or to run it always in the startup:
+```
+docker run -d \
+  -p 10000:8888 \
+  -v "$(pwd)":/home/user/app \
+  --name my_jupyter_container \
+  --restart unless-stopped \ 
+  amirpourmand/jupyter-docker-conda
+```
+
 This command will map your current working directory into the Docker container. For added security, consider creating an empty folder called jupyter or another suitable name.
 
 2. Open up your browser to with port 10000 (http://localhost:10000) to see your jupyter notebook.
