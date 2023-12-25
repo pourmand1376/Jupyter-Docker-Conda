@@ -3,9 +3,12 @@ FROM bitnami/minideb:latest
 RUN apt-get update && apt-get install -y wget git curl nano vim htop && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -u 1000 user
+
 USER user
+
 ENV HOME=/home/user \
     PATH=/home/user/.local/bin:${PATH}
+
 WORKDIR ${HOME}/app
 
 ENV PATH="${HOME}/miniconda3/bin:${PATH}"
