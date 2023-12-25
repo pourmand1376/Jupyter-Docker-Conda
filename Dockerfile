@@ -17,7 +17,7 @@ RUN wget \
     && bash Miniconda3-latest-Linux-x86_64.sh -b \
     && rm -f Miniconda3-latest-Linux-x86_64.sh
 
-RUN conda install nb_conda nb_conda_kernels
+RUN conda install nb_conda_kernels
 
 RUN conda install -c conda-forge jupyterlab
 
