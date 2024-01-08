@@ -16,10 +16,6 @@ ENV PATH="${HOME}/miniconda3/bin:${PATH}"
 ARG PATH="${HOME}/miniconda3/bin:${PATH}"
 
 
-# install node.js and nvm
-RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && source ~/.bashrc && nvm install node 
-###
-
 RUN wget \
     https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && mkdir ${HOME}/.conda \
