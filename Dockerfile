@@ -1,7 +1,7 @@
 FROM bitnami/minideb:latest
 # if you want to use GPU, you only need to change from Image and provide your own NVIDIA CUDA base Image
 # FROM nvidia/cuda:12.0.1-cudnn8-devel-ubuntu22.04
-RUN apt-get update && apt-get install -y wget git curl nano vim htop && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget git curl nano vim htop  && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -u 1000 user
 
@@ -14,6 +14,11 @@ WORKDIR ${HOME}/app
 
 ENV PATH="${HOME}/miniconda3/bin:${PATH}"
 ARG PATH="${HOME}/miniconda3/bin:${PATH}"
+
+
+# install node.js and nvm
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && source ~/.bashrc && nvm install node 
+###
 
 RUN wget \
     https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
