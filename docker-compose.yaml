@@ -9,3 +9,11 @@ services:
     volumes:
       - .:/home/user/app
     restart: unless-stopped
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           device_ids: ["4"]
+    #           capabilities: [gpu]
+
