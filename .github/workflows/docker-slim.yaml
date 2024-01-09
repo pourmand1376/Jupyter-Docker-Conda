@@ -38,8 +38,8 @@ jobs:
           DSLIM_TARGET_COMPOSE_SVC: app
           DSLIM_CONTINUE_AFTER: signal
         with:
-          target: amirpourmand/jupyter_docker_conda
+          target: amirpourmand/jupyter-docker-conda
           tag: "slim"
 
       # Push to the registry
-      - run: docker image push amirpourmand/jupyter_docker_conda:slim
+      - run: docker image push amirpourmand/jupyter-docker-conda:slim
