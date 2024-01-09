@@ -1,6 +1,7 @@
 # Jupyter-Docker-Conda
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Slim Docker Image Size(tag)](https://img.shields.io/docker/image-size/amirpourmand/jupyter-docker-conda/slim)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/amirpourmand/jupyter-docker-conda/latest)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/pourmand1376/Jupyter-Docker-Conda/deploy-image.yaml)
 
@@ -21,17 +22,18 @@ docker run -d \
   -p 10000:8888 \
   -v "$(pwd)":/home/user/app \
   --name my_jupyter_container \
-  amirpourmand/jupyter-docker-conda
+  amirpourmand/jupyter-docker-conda:slim
 ```
 
 or to run it always in the startup:
+
 ```
 docker run -d \
   -p 10000:8888 \
   -v "$(pwd)":/home/user/app \
   --name my_jupyter_container \
   --restart unless-stopped \
-  amirpourmand/jupyter-docker-conda
+  amirpourmand/jupyter-docker-conda:slim
 ```
 
 This command will map your current working directory into the Docker container. For added security, consider creating an empty folder called jupyter or another suitable name.

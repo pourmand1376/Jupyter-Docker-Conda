@@ -42,4 +42,4 @@ jobs:
           tag: "slim"
 
       # Push to the registry
-      - run: docker image push amirpourmand/jupyter-docker-conda:latest
+      - run: docker image push amirpourmand/jupyter-docker-conda:slim
