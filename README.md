@@ -93,3 +93,7 @@ docker exec -it -u 0 my_jupyter_container bash
 - Very Simple to work with.
 
 Feel free to explore and utilize Jupyter-Docker-Conda for your data science and development needs!
+
+## Important
+
+Note that docker containers can not take more than 10GB of Disk. To solve this problem, you have to mount `~/.cache` directory to a folder in your system or you can increase that limit using [this tutorial](https://stackoverflow.com/questions/31883782/docker-and-image-size-limit).
