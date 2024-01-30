@@ -30,7 +30,7 @@ RUN wget \
 
 RUN conda install nb_conda_kernels
 
-RUN conda install -c conda-forge jupyterlab
+RUN conda install -c conda-forge jupyterlab ipywidgets
 
 ENV JUPYTER_PORT=8888 \
     TOKEN=docker \
