@@ -4,6 +4,9 @@ FROM ubuntu
 
 RUN apt-get update && apt-get install -y wget git curl nano vim htop nodejs && rm -rf /var/lib/apt/lists/*
 
+# change default shell to bash
+RUN ln -sf /bin/bash /bin/sh
+
 # installing Nodejs is necessary for jupyterlab to work correctly
 
 RUN useradd -m -u 1000 user
