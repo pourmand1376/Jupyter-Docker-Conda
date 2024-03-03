@@ -23,14 +23,14 @@ ARG PATH="${HOME}/miniconda3/bin:${PATH}"
 
 
 RUN wget \
-    https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    https://repo.anaconda.com/miniconda/Miniconda3-py311_24.1.2-0-Linux-x86_64.sh \
     && mkdir ${HOME}/.conda \
-    && bash Miniconda3-latest-Linux-x86_64.sh -b \
-    && rm -f Miniconda3-latest-Linux-x86_64.sh
+    && bash Miniconda3-py311_24.1.2-0-Linux-x86_64.sh -b \
+    && rm -f Miniconda3-py311_24.1.2-0-Linux-x86_64.sh
 
-RUN conda install nb_conda_kernels
+RUN conda install nb_conda_kernels -y
 
-RUN conda install -c conda-forge jupyterlab ipywidgets
+RUN conda install -c conda-forge jupyterlab ipywidgets -y
 
 ENV JUPYTER_PORT=8888 \
     TOKEN=docker \
