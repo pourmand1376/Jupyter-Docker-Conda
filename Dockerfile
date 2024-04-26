@@ -32,6 +32,8 @@ RUN conda install nb_conda_kernels -y
 
 RUN conda install -c conda-forge jupyterlab ipywidgets -y
 
+RUN pip install jupyter
+
 ENV JUPYTER_PORT=8888 \
     TOKEN=docker \
     SHELL=/bin/bash \
