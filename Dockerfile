@@ -9,8 +9,6 @@ RUN ln -sf /bin/bash /bin/sh
 
 # installing Nodejs is necessary for jupyterlab to work correctly
 
-RUN useradd -m -u 1000 user
-
 RUN groupadd -g 1000 user \
   && useradd --create-home --no-log-init -u 1000 -g 1000 user
 
