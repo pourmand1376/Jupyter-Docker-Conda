@@ -8,6 +8,7 @@ services:
       - 10000:8888
     volumes:
       - .:/home/user/app
+    shm_size: 2gb
     restart: unless-stopped
     # deploy:
     #   resources:
@@ -16,3 +17,5 @@ services:
     #         - driver: nvidia
     #           device_ids: ["4"]
     #           capabilities: [gpu]
+
+#https://stackoverflow.com/questions/58952478/changing-shared-memory-size-in-docker-compose
